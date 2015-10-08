@@ -1,0 +1,27 @@
+<div class="text-center" >
+	<h2>Todo List</h2>
+</div>
+<div class="row" >
+	<div class="col-lg-6 col-md-8 col-sm-10  col-xs-12  col-lg-offset-3 col-md-offset-2 col-md-offset-1" >
+		 <table class="table table-bordered" >
+			 <thead>
+				<th>Sl No.</th>
+				<th>Task Name</th>
+				<th>Action</th>
+				<th>Delete</th>
+			 </thead>
+			 <tbody>
+				<tr ng-repeat="task in data.taskList" ng-hide="task.deleteTask"  >  
+					<td>{{$index+1}}</td>
+					<td>{{task.name}}</td>
+					<td>
+						<button class="btn btn-primary" ng-show="task.action" ng-click="task.action=!task.action"   >Complete</button>
+						<span class="label label-success" ng-show="!task.action" >Completed</span>{{task.action}}
+					</td>
+					<td><button class="btn btn-danger"  ng-click="task.deleteTask=!task.deleteTask" >X</button></td>
+				</tr>	
+			 </tbody>
+		 </table>
+	</div>
+</div>
+	
